@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from . import helpers
+import numpy as np
 from obspy.clients.seedlink.easyseedlink import EasySeedLinkClient
 
 
@@ -15,6 +16,9 @@ class GsiClient(EasySeedLinkClient):
         print('Received trace:')
         print(trace)
         print()
+        trace.detrend(type='linear')
+        div = np.true_divide(trace.data, 405966.0)
+        print(div)
 
 
 def get_hmm():
