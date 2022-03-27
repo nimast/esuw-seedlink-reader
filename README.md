@@ -22,6 +22,10 @@ Ran
 `./slinktool -v -S IS_DS
 I:22ENZ 82.102.143.63:18000`
 
+## With obspy
+* Had to change the requirements.txt to install on debian (scipy was causing issues)
+* Used my GsiClient 
+* ran `select_stream('IS', 'DSI', 'ENZ')` and after `run()` I got results!
 
 
 ---------------
